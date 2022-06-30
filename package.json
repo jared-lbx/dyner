@@ -1,6 +1,9 @@
 {
   "private": true,
   "sideEffects": false,
+  "prisma": {
+    "seed": "node prisma/seed"
+  },
   "scripts": {
     "build": "npm run build:css && remix build",
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
@@ -17,7 +20,8 @@
     "@vercel/node": "^1.15.2",
     "prisma": "^4.0.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.6.3",
