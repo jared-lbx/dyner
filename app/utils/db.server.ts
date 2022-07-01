@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+export type { Profile, Meal, Restaurant, Review } from "@prisma/client";
 
 let db: PrismaClient;
 

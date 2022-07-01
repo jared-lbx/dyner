@@ -11,19 +11,21 @@ datasource db {
 }
 
 model Review {
-  id        Int     @id @default(autoincrement())
-  title     String
-  numStars  Int
-  meal      Meal?   @relation(fields: [mealId], references: [id])
-  profile   Profile @relation(fields: [profileId], references: [id])
-  profileId Int
-  mealId    Int?
+  id         Int      @id @default(autoincrement())
+  reviewBody String
+  numStars   Int
+  meal       Meal     @relation(fields: [mealId], references: [id])
+  mealId     Int
+  profile    Profile  @relation(fields: [profileId], references: [id])
+  profileId  Int
+  createdAt  DateTime @default(now())
 }
 
 model Profile {
   id        Int      @id @default(autoincrement())
   firstname String
   lastname  String
+  position  String
   reviews   Review[]
 }
 
@@ -32,6 +34,7 @@ model Restaurant {
   name    String
   cuisine String
   meals   Meal[]
+  city    String @default("Boulder")
 }
 
 model Meal {
