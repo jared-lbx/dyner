@@ -34,7 +34,7 @@ export default function NewRestaurant() {
   const inputClassName = `w-full rounded border bg-gray-800 border-gray-500 px-2 py-1 text-md`;
   const errors = useActionData() as ActionData;
   return (
-    <div>
+    <div className="text-gray-800">
       <div className="md:grid md:grid-cols-4 md:gap-6">
         <div className="md:col-span-1"></div>
         <div className="mt-5 md:mt-0 md:col-span-2">
@@ -62,7 +62,7 @@ export default function NewRestaurant() {
                         type="text"
                         name="name"
                         id="name"
-                        className="focus:ring-indigo-500 focus:border-indigo-500 px-2  py-1 flex-1 block w-full rounded-md rounded-r-md sm:text-sm border-gray-300"
+                        className="shadow-sm px-2 py-1 focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                         placeholder="Slork Taco"
                       />
                     </div>

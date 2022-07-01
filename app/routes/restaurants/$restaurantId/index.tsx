@@ -44,7 +44,7 @@ export default function SpecificRestaurant() {
   const [open, setOpen] = React.useState(false);
   return (
     <>
-      <div className="grid grid-cols-6 h-full">
+      <div className="grid grid-cols-6 h-full text-gray-700">
         <div className="col-span-1"></div>
         <div className="col-span-4">
           <div className="container">
@@ -67,8 +67,8 @@ export default function SpecificRestaurant() {
               </h3>
             ) : (
               <>
-                <h3 className="text-md pt-4">Meals</h3>
-                <ul className=" mt-2">
+                <h3 className="text-md pt-4 font-bold">Meals</h3>
+                <ul className=" mt-2 flex flex-col gap-1">
                   {restaurant.meals.map((meal, ind) => {
                     const avg = meal.Review.length
                       ? meal.Review.reduce((p, c) => p + c.numStars, 0) /
@@ -86,14 +86,14 @@ export default function SpecificRestaurant() {
                       <Link
                         to={`reviews/${meal.id}`}
                         key={ind}
-                        className=" pl-2 py-4 my-2 group animate transition-all"
+                        className="pl-2 py-4 group animate transition-all"
                       >
-                        <div className="inline-flex flex-grow place-items-end justify-start items-center h-full py-4 gap-3 w-full">
-                          <h3 className="text-sm group-hover:text-indigo-600 animate transition-all w-32">
+                        <div className="inline-flex flex-grow place-items-end justify-between items-center h-full px-2 py-4 gap-3 w-5/6 bg-white rounded-md shadow-md">
+                          <h3 className="text-sm font-bold group-hover:text-indigo-600 animate transition-all w-32">
                             {meal.name}
                           </h3>
                           {/* <p>|</p> */}
-                          <p className="text-xs text-gray-400 italic w-64 pl-2 border-l-2 h-full">
+                          <p className="text-xs text-gray-600 italic w-64 pl-2 border-l-2 h-full">
                             {meal.description}
                           </p>
                           {stars.length ? (
@@ -122,7 +122,7 @@ export default function SpecificRestaurant() {
             )}
             <Link
               to="meal/new"
-              className="text-sm  mt-2 py-1 px-1 bg-indigo-600 rounded-md flex w-24 justify-center items-center place-items-center"
+              className="text-sm  mt-2 py-1 px-1 bg-indigo-600 text-white rounded-md flex w-24 justify-center items-center place-items-center"
             >
               Add a meal
             </Link>

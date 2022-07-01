@@ -39,7 +39,6 @@ export const action: ActionFunction = async ({ params, request }) => {
   invariant(profileId !== undefined, "must pass profileId");
   invariant(typeof profileId === "string", "must pass profileId");
   await deleteProfileById(profileId);
-  console.log("deleted");
   return redirect("/profiles");
 };
 
@@ -63,17 +62,17 @@ export default function SpecificProfile() {
             name="profileId"
             value={profile?.id}
           >
-            <TrashIcon className="h-4 w-4" />
+            <TrashIcon className="h-6 w-4 text-gray-700" />
           </button>
         </Form>
       </div>
       {!reviews.length ? (
-        <h3 className="text-gray-400 text-sm italic">
+        <h3 className="text-gray-500 text-md italic">
           This user hasn't added any reviews yet. Scoundrel!
         </h3>
       ) : (
         <>
-          <h2 className="pt-4 text-md">Reviews</h2>
+          <h2 className="pt-4 text-md text-gray-800">Reviews</h2>
           <div className="grid grid-cols-1 gap-2 pb-4">
             {reviews.map((review, ind) => (
               <li
@@ -114,7 +113,7 @@ export default function SpecificProfile() {
               </li>
             ))}
           </div>
-          <h2 className="pt-5 text-md">Restaurants Visited</h2>
+          <h2 className="pt-5 text-md text-gray-800">Restaurants Visited</h2>
           <div className="grid grid-cols-2">
             {reviews.map((review, ind) => (
               <li

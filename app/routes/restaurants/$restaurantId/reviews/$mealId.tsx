@@ -84,7 +84,7 @@ export default function NewReview() {
   const errors = useActionData() as ActionData;
   const { meal, restaurant, me, people } = useLoaderData() as LoaderData;
   return (
-    <div>
+    <div className="text-gray-700">
       <div className="md:grid md:grid-cols-4 md:gap-6">
         <div className="md:col-span-1"></div>
         <div className="mt-5 md:mt-0 md:col-span-2">
@@ -172,7 +172,7 @@ export default function NewReview() {
                     id="profileId"
                     list="peopleList"
                     className={
-                      "focus:ring-indigo-500 focus:border-indigo-500 px-2  py-1 flex-1 block w-full rounded-md rounded-r-md sm:text-sm border-gray-300"
+                      "shadow-sm px-2 py-1 focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                     }
                   />
                   <datalist id="peopleList">

@@ -56,10 +56,10 @@ export default function Index() {
   const { reviews } = useLoaderData() as LoaderData;
 
   return (
-    <div className="flow-root p-4">
-      <h1 className="inline-flex place-items-center text-xl text-indigo-400 font-bold gap-1">
+    <div className="flow-root p-4 pl-8">
+      <h1 className="inline-flex place-items-center text-2xl text-indigo-400 font-bold gap-1">
         <GiFruitBowl />
-        Feed
+        <span className="text-gray-700">Feed</span>
       </h1>
       {!reviews.length && (
         <h3 className="text-gray-300">
@@ -72,11 +72,11 @@ export default function Index() {
             <div className="relative pb-8">
               {reviewIndex !== reviews.length - 1 ? (
                 <span
-                  className="absolute top-7 left-5 -ml-px pb-2 h-5/6 w-0.5 bg-indigo-200"
+                  className="absolute top-10 left-5 -ml-px pb-2 h-5/6 w-0.5 bg-indigo-500"
                   aria-hidden="true"
                 />
               ) : null}
-              <div className="relative flex items-start space-x-3 mt-4">
+              <div className="relative flex items-start space-x-3 mt-4 p-2 pr-6 pb-5 bg-white w-fit rounded-md">
                 <>
                   <ChatAltIcon
                     className="h-6 w-6 text-indigo-400"
@@ -87,19 +87,19 @@ export default function Index() {
                       <div className="text-sm">
                         <Link
                           to={`/profiles/${review.profile.id}`}
-                          className="font-medium text-indigo-400 text-md"
+                          className="font-medium text-gray-800 text-md"
                         >
                           {`${review.profile.firstname} ${review.profile.lastname}`}
                         </Link>
                       </div>
                       <div className="text-sm inline-flex gap-1 place-items-end">
-                        <span className="text-indigo-200">
-                          {review.meal?.name}
+                        <span className="text-indigo-500">
+                          {review.meal?.name} {` `}-
                         </span>
-                        -
-                        <span className="text-xs italic">
+                        <span className="text-xs italic text-indigo-500 flex flex-row items-center justify-center">
                           <Link
                             to={`/restaurants/${review.meal?.restaurant.id}`}
+                            className="text-xs italic text-indigo-500 flex flex-row items-center justify-center"
                           >
                             {review.meal?.restaurant.name},{" "}
                             {review.meal?.restaurant.city}
@@ -111,7 +111,7 @@ export default function Index() {
                         {getAgo(review.createdAt)}
                       </p>
                     </div>
-                    <div className="mt-2 text-sm text-gray-200 italic">
+                    <div className="mt-2 text-sm text-gray-500 italic">
                       <p>"{review.reviewBody}"</p>
                     </div>
                   </div>

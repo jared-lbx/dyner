@@ -33,18 +33,18 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function NewUser() {
-  const inputClassName = `w-full rounded border bg-gray-800 border-gray-500 px-2 py-1 text-md`;
+  const inputClassName = `w-full rounded border bg-white border-gray-500 px-2 text-black py-1 text-md`;
   const errors = useActionData() as ActionData;
   return (
     <div className="flex flex-col gap-2">
-      <h1 className="text-lg font-medium text-indigo-400">Create a new user</h1>
+      <h1 className="text-lg font-medium text-indigo-700">Create a new user</h1>
       <Form
         method="post"
         className="flex flex-col items-start justify-start gap-2"
       >
         <div className="flex flex-row gap-1">
           <p>
-            <label>
+            <label className="text-gray-800">
               First name
               {errors?.first && (
                 <em className="text-red-600">{errors.first}</em>
@@ -53,7 +53,7 @@ export default function NewUser() {
             </label>
           </p>
           <p>
-            <label>
+            <label className="text-gray-800">
               Last name
               {errors?.last && <em className="text-red-600">{errors.last}</em>}
               <input type="text" name="last" className={inputClassName} />
@@ -62,7 +62,7 @@ export default function NewUser() {
         </div>
         <div className="flex flex-row gap-1">
           <p>
-            <label>
+            <label className="text-gray-800">
               Position
               {errors?.position && (
                 <em className="text-red-600">{errors.position}</em>

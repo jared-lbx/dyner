@@ -56,7 +56,7 @@ function Document({
   title?: string;
 }) {
   return (
-    <html lang="en" className="h-full bg-gray-600 text-white">
+    <html lang="en" className="h-full bg-gray-300 text-white">
       <head>
         <Links />
         <meta charSet="utf-8" />
@@ -64,7 +64,7 @@ function Document({
         <Meta />
         <title>{title ? title : "Jared's Remix Blog"}</title>
       </head>
-      <body className="h-full bg-gray-700">
+      <body className="h-full bg-gray-300">
         {/* whichever route we're on will output here */}
         {children}
         {/* {process.env.NODE_ENV === "development" ? <LiveReload /> : null} */}

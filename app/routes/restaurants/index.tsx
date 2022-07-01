@@ -71,10 +71,10 @@ export default function Index() {
             <li className="">
               <div className="flex flex-row">
                 <PencilIcon
-                  className="w-5 h-5 text-gray-400 group-hover:text-indigo-400 animate transition-all"
+                  className="w-5 h-5 text-gray-800 group-hover:text-indigo-800 animate transition-all"
                   aria-hidden="true"
                 />
-                <p className="ml-3 group-hover:text-indigo-400 animate transition-all">
+                <p className="ml-3 text-gray-800 group-hover:text-indigo-800 animate transition-all">
                   Add a restaurant
                 </p>
               </div>
